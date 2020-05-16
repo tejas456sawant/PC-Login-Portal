@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <link rel="stylesheet" href="style.css">
+    <script src="./tableDataChange.js"></script>
+    <script src="./mysqlconn.js"></script>
+    <script src="./server.js"></script>
+    <title>Server</title>
+</head>
+
+<body class="bg" onload="">
+    <div class="toptxt">
+        <span class="example_b" id="ipadd" align="center"></span>
+    </div>
+    </div>
+    <div class="text">
+        <table class="table" id="gettable">
+            <thead>
+                <tr>
+                    <tr>
+                        <th>Computer Name</th>
+                        <th>LAB</th>
+                        <th>Student Name</th>
+                        <th>Enrollment No</th>
+                        <th>Action</th>
+                    </tr>
+                </tr>
+            </thead>
+            <tr>
+            </tr>
+        </table>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js "></script>
+</body>
+
+</html>

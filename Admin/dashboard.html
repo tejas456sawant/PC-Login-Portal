@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Portal Login Admin</title>
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="stylesheet" href="./vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="./vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="./vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="./vendors/jqvmap/dist/jqvmap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/main.js"></script>
+    <script src="./js/require.js"></script>
+    <script src="./js/mysqlconn.js"></script>
+    <script src="./js/adminname.js"></script>
+    <script>
+        $query1 = "select * from tblcomp";
+        connection.query($query1, function(err, rows, fields) {
+            if (err) {
+                console.log("An error ocurred performing the query.");
+                console.log(err);
+                return;
+            }
+            document.getElementById('count1').innerHTML = rows.length + " ";
+        });
+        $query2 = "select * from tbllabs";
+        connection.query($query2, function(err, rows, fields) {
+            if (err) {
+                console.log("An error ocurred performing the query.");
+                return;
+            }
+            document.getElementById('count2').innerHTML = rows.length + " ";
+        });
+    </script>
+</head>
+
+<body>
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+                <a class="navbar-brand" href="dashboard.html">PORTAL ADMIN |<span id="adminname" style="font-size: 22px;"></span></a>
+            </div>
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="menu-icon fa fa-dashboard"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="menu-icon fa fa-tasks"></i> Computer
+                        </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-file-o"></i><a href="./add-computer.html">Add Computer</a></li>
+                            <li><i class="menu-icon fa fa-file-o"></i><a href="./manage-computer.html">Manage Computer</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="./add-users.html" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Users</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-user"></i><a href="./add-users.html">Add User</a></li>
+                            <li><i class="fa fa-user"></i><a href="./manage-newusers.html">Manage New Users</a></li>
+                            <li><i class="fa fa-user"></i><a href="./manage-olduser.html">View Old Users</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="./search.html"> <i class="menu-icon fa fa-search"></i>Search </a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Reports</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-file-o"></i><a href="./bwdates-report-ds.html">Between Dates Report</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <div id="right-panel" class="right-panel">
+        <header id="header" class="header">
+            <div class="header-menu">
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                        <div class="form-inline"></div>
+                        <div class="form-inline"></div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="images/images.png" alt="User Avatar">
+                        </a>
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="./adminprofile.html"><i class="fa fa-user"></i>   My Profile</a>
+                            <a class="nav-link" href="./change-password.html"><i class="fa fa-cog"></i>Change Password</a>
+                            <a class="nav-link" href="./logout.html"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="col-sm-6 col-lg-6">
+                <div class="card text-white bg-flat-color-4">
+                    <div class="card-body pb-0">
+                        <div class="dropdown float-right">
+                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton4" data-toggle="dropdown">
+                                <i class="fa fa-cog"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                                <div class="dropdown-menu-content">
+                                    <a class="dropdown-item" href="./view-allusers.html">Action</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="mb-0">
+                            <span class="count" id="count1"></span>
+                        </h4>
+                        <p class="text-light">Total Number of Computers</p>
+                        <div class="chart-wrapper px-3" style="height:70px;" height="70">
+                            <canvas id="widgetChart4"></canvas>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--/.col-->
+
+            <div class="col-sm-6 col-lg-6">
+                <div class="card text-white bg-flat-color-2">
+                    <div class="card-body pb-0">
+                        <div class="dropdown float-right">
+                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton2" data-toggle="dropdown">
+                                <i class="fa fa-cog"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                <div class="dropdown-menu-content">
+                                    <a class="dropdown-item" href="manage-computer.html">Action</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="mb-0">
+                            <span class="count" id="count2"></span>
+                        </h4>
+                        <p class="text-light">Total Labs</p>
+                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
+                            <canvas id="widgetChart2"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .content -->
+    </div>
+    <!-- /#right-panel -->
+</body>
+
+</html>

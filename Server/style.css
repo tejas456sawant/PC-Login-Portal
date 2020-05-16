@@ -1,0 +1,72 @@
+body {
+    overflow-x: hidden;
+}
+
+.bg {
+    background: #870000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #190A05, #870000);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #190A05, #870000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.text {
+    font-size: 15px;
+    color: yellow;
+    font-family: 'Lucida console';
+}
+
+.example_b {
+    font-family: 'Lucida console';
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    margin-top: 1%;
+    left: 25%;
+    text-align: center;
+    position: sticky;
+}
+
+.example_b:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    transition: all 0.4s ease 0s;
+    text-align: center;
+    position: sticky;
+}
+
+.table {
+    width: 100%;
+    margin-top: 2%;
+    margin-left: 0%;
+    margin-right: 0%;
+    text-transform: uppercase;
+}
+
+.table th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table td {
+    padding: 1px;
+    vertical-align: top;
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+}
+
+.table td,
+.table th {
+    padding: 5px;
+    text-align: center;
+}

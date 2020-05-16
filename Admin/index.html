@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portal Admin Login</title>
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="stylesheet" href="./vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="./vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="./vendors/selectFX/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./js/require.js"></script>
+    <script src="./js/mysqlconn.js"></script>
+    <script>
+        function validLogin() {    
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            $query = "select * from tbladmin where  UserName='"+user+"' && Password='"+pass+"'";
+            connection.query($query, function(err, rows, fields) {
+                if(err) {
+                    console.log("An error ocurred performing the query.");
+                    console.log(err);
+                    return;
+                }
+                if(rows.length > 0) {
+                    var string=JSON.stringify(rows);
+                    var json =  JSON.parse(string);
+                    var adminName = json[0].UserName;
+                    var fs = require("fs");
+                    var writeStream = fs.createWriteStream("test-log.txt");
+                    writeStream.write(adminName);
+                    writeStream.end();
+                    document.getElementById('errmsg').innerHTML = "Valid Details.";
+                    location.replace("./dashboard.html");
+                } else {
+                    document.getElementById('errmsg').innerHTML = "Invalid Details.";
+                }
+            });
+        }
+    </script>
+</head>
+<body class="bg-gre">
+    <div class="sufee-login d-flex align-content-center flex-wrap" >
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <h3 style="color: white">Portal Admin Login</h3>
+                    <hr  color="red"/>
+                </div>
+                <div class="login-form">
+                    <form action="" method="post" name="login">
+                        <p style="font-size:16px; color:red" align="center" id="errmsg" name="errmsg"></p>
+                        <div class="form-group">
+                            <label>Enter Username</label>
+                            <input type="text" class="form-control" placeholder="USERNAME" required="true" name="username" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Password</label>
+                            <input type="password" class="form-control" placeholder="PASSWORD" required="true" name="password" id="password">
+                        </div>
+                        <div class="checkbox">
+                            <label class="pull-right">
+                                <a href="forgot-password.html">FORGOT PASSWORD?</a>
+                            </label>
+                        </div>
+                        <input type="button" class="btn btn-success btn-flat m-b-30 m-t-30" name="login" id="login" onclick="validLogin()" value="LOGIN"/>            
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "Login-Portal-Server",
+  "version": "1.0.0",
+  "description": "Server for Login Portal.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Login",
+    "Portal",
+    "Server"
+  ],
+  "author": "Tejas Sawant",
+  "license": "Tejas-Sawant",
+  "devDependencies": {
+    "electron": "^7.1.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "0.0.0",
+    "jquery": "^3.4.1",
+    "mysql": "^2.17.1",
+    "net": "^1.0.2",
+    "pm2": "^4.2.1",
+    "socket.io": "^2.3.0"
+  }
+}
