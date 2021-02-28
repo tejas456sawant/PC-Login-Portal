@@ -36,7 +36,7 @@
     "gmaps": "^0.4.24",
     "html2canvas": "^1.0.0-rc.5",
     "jquery": "^3.5.0",
-    "jquery-validation": "^1.19.1",
+    "jquery-validation": "^1.19.3",
     "jquery-validation-unobtrusive": "^3.2.11",
     "jqvmap": "^1.5.1",
     "jszip": "^3.2.2",
