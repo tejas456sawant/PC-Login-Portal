@@ -15,7 +15,7 @@
   "author": "Tejas Sawant",
   "license": "Tejas-Sawant",
   "devDependencies": {
-    "electron": "^13.6.6"
+    "electron": "^15.5.5"
   },
   "dependencies": {
     "express": "^4.17.1",
