@@ -44,7 +44,7 @@
     "pdfmake": "^0.1.63",
     "peity": "^3.3.0",
     "popper.js": "^1.16.0",
-    "sqlite3": "^4.1.1",
+    "sqlite3": "^4.2.0",
     "themify-icons": "^1.0.0"
   }
 }
