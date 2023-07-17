@@ -40,7 +40,7 @@
     "jquery-validation-unobtrusive": "^3.2.11",
     "jqvmap": "^1.5.1",
     "jszip": "^3.7.0",
-    "mysql": "^2.17.1",
+    "mysql": "^2.18.0",
     "pdfmake": "^0.1.63",
     "peity": "^3.3.0",
     "popper.js": "^1.16.0",
