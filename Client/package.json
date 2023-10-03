@@ -26,6 +26,6 @@
     "electron-shutdown-command": "0.0.8",
     "fs": "0.0.1-security",
     "net": "^1.0.2",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.7.2"
   }
 }
